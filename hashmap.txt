@@ -1,0 +1,40 @@
+
+1)write  a program for collect employee details using hashmap
+i)collect minimum 5 employee details 
+ii)traverse using objects
+iii)update employee details
+iv)delete employee details
+package collection;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class Hash {
+	public static void main(String a[])
+	{
+		HashMap<Integer,String> empDetails=new HashMap<Integer,String>();
+		empDetails.put(1001,"snehan");
+		empDetails.put(1002,"oviya");
+		empDetails.put(1003, "aarav");
+		empDetails.put(1004, "julie");
+		empDetails.put(1005, "harathi");
+		empDetails.put(1006, "raiza");
+		Set s=empDetails.entrySet();
+		Iterator itr=s.iterator();
+		while(itr.hasNext())
+		{
+			Map.Entry m=(Map.Entry)itr.next();
+			System.out.print(m.getKey()+"  ");
+			System.out.print(m.getValue());
+			System.out.println();
+		}
+		empDetails.remove(1005);
+		System.out.println("after removing");
+		System.out.println("values after removing"+empDetails);	
+		empDetails.put(1002,"nami");
+		System.out.println("the updated value is"+empDetails);
+	}
+
+}
